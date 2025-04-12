@@ -1,0 +1,75 @@
+{
+  "name": "shark-canvas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint:eslint": "eslint  --fix --ext .ts,.tsx,.js ./src ",
+    "lint:prettier": "prettier --write \"**/*.{js,cjs,ts,json,tsx,css,less,scss,html,md}\"",
+    "lint:stylelint": "stylelint  \"**/*.{css,less,scss}\" --fix",
+    "lint:lint-staged": "lint-staged",
+    "i18n": "node build/bin/i18n.js && prettier --write \"src/i18n/locales/*.ts\""
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,json}": [
+      "prettier --write"
+    ],
+    "*.{html}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{less,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@douyinfe/semi-icons": "^2.78.0",
+    "@douyinfe/semi-illustrations": "^2.78.0",
+    "@douyinfe/semi-ui": "^2.78.0",
+    "mobx": "^6.13.7",
+    "mobx-react-lite": "^4.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.5.0",
+    "xlsx-js-style": "^1.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "less": "^4.3.0",
+    "lint-staged": "^15.5.1",
+    "postcss": "^8.5.3",
+    "postcss-html": "^1.8.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recommended-less": "^3.0.1",
+    "stylelint-config-standard": "^38.0.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "unocss": "66.1.0-beta.11",
+    "vite": "^6.2.0"
+  }
+}
