@@ -1,0 +1,55 @@
+.design-wrapper {
+  background-color: var(--semi-color-bg-0);
+
+  .design-sider {
+    background-color: #fff;
+  }
+
+  .design-source {
+    left: @design-sider-width;
+    background-color: green;
+    width: @design-source-width;
+
+    &.translate-x-source {
+      transform: translateX(-@design-source-width);
+    }
+
+    .btn-source-toggle {
+      background-color: var(--semi-color-bg-4);
+    }
+  }
+
+  .design-header {
+    background-color: yellow;
+    height: @design-header-height;
+  }
+
+  .design-editor {
+    background-color: paleturquoise;
+    top: @design-header-height;
+
+    &.left {
+      left: calc(@design-sider-width + @design-source-width);
+    }
+
+    &.left-collapse {
+      left: calc(@design-sider-width);
+    }
+
+    &.right-collapse {
+    }
+  }
+
+  .design-options {
+    background-color: beige;
+    width: @design-options-width;
+
+    &.translate-x-options {
+      transform: translateX(@design-options-width);
+    }
+
+    .btn-options-toggle {
+      background-color: var(--semi-color-bg-4);
+    }
+  }
+}
