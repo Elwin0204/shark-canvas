@@ -8,6 +8,7 @@ const pathSrc = resolve(__dirname, "src");
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/shark-canvas",
   plugins: [
     UnoCSS(),
     svgr({
@@ -59,6 +60,7 @@ export default defineConfig({
         // 用于命名代码拆分时创建的共享块的输出命名
         chunkFileNames: "js/[name].[hash].js",
         // 用于输出静态资源的命名，[ext]表示文件扩展名
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         assetFileNames: (assetInfo: any) => {
           const info = assetInfo.name.split(".");
           let extType = info[info.length - 1];
