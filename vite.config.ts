@@ -8,7 +8,7 @@ const pathSrc = resolve(__dirname, "src");
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/shark-canvas",
+  // base: "/shark-canvas",
   plugins: [
     UnoCSS(),
     svgr({
@@ -41,6 +41,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "docs",
     chunkSizeWarningLimit: 500,
     minify: "terser", // Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效
     terserOptions: {
