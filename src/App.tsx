@@ -8,7 +8,7 @@ function App() {
 
   return (
     <ConfigProvider locale={locale}>
-      <BrowserRouter>
+      <BrowserRouter basename="/shark-canvas">
         <Router />
       </BrowserRouter>
     </ConfigProvider>
