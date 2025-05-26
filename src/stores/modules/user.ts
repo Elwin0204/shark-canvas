@@ -1,17 +1,19 @@
 import { makeAutoObservable } from "mobx";
 
 class UserStore {
-  token = "";
+  token = '';
   userInfo = {
-    name: "",
-    avatar: "",
+    name: '',
+    avatar: '',
   };
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  login() {}
+  login() {
+
+  }
 
   logout() {}
 }

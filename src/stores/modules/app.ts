@@ -2,7 +2,7 @@ import { localeMap, LocaleMapType } from "@/i18n";
 import { makeAutoObservable } from "mobx";
 
 class AppStore {
-  localeCode: LocaleMapType = "zh_CN";
+  localeCode: LocaleMapType = 'zh_CN';
   locale = localeMap[this.localeCode];
   collapse = false;
   isMobile = false;

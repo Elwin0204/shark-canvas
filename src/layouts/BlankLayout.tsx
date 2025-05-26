@@ -1,7 +1,9 @@
-import { Outlet } from "react-router";
+import { Outlet } from 'react-router'
 
 const BlankLayout: React.FC = () => {
-  return <Outlet />;
-};
+  return (
+    <Outlet />
+  )
+}
 
-export default BlankLayout;
+export default BlankLayout

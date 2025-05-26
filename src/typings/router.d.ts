@@ -17,7 +17,6 @@ export interface RouteMeta {
 export interface ExtendedRouteObject extends RouteObject {
   path?: string;
   key?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   index?: any;
   element?: ReactNode;
   children?: ExtendedRouteObject[];

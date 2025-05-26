@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
 
 const Template: React.FC = () => {
-  return <div>模板</div>;
-};
+  return (
+    <div>模板</div>
+  );
+}
 
-export default Template;
+export default Template

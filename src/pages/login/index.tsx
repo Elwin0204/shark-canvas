@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
 
 const Login: React.FC = () => {
-  return <div>登录</div>;
-};
+  return (
+    <div>登录</div>
+  );
+}
 
-export default Login;
+export default Login

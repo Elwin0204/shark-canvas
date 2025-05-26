@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
 
 const Project: React.FC = () => {
-  return <div>项目</div>;
-};
+  return (
+    <div>项目</div>
+  );
+}
 
-export default Project;
+export default Project

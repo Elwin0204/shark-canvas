@@ -1,11 +1,8 @@
-import { Navigate, useRoutes } from "react-router";
-import Login from "@/pages/login";
-import { EagerRouteModules, ExtendedRouteObject } from "@/typings/router";
+import { Navigate, useRoutes } from 'react-router'
+import Login from '@/pages/login'
+import { EagerRouteModules, ExtendedRouteObject } from '@/typings/router'
 
-const metaRoutes: EagerRouteModules = import.meta.glob("./modules/*.tsx", {
-  eager: true,
-});
-// eslint-disable-next-line react-refresh/only-export-components
+const metaRoutes: EagerRouteModules = import.meta.glob("./modules/*.tsx", { eager: true })
 export const routeArray: ExtendedRouteObject[] = [];
 
 Object.keys(metaRoutes).forEach((path) => {
@@ -13,26 +10,25 @@ Object.keys(metaRoutes).forEach((path) => {
   routeArray.push(...module.default);
 });
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const rootRoutes: ExtendedRouteObject[] = [
   {
-    path: "/login",
+    path: '/login',
     element: <Login />,
     meta: {
-      title: "登录",
-      hidden: true,
-    },
+      title: '登录',
+      hidden: true
+    }
   },
   ...routeArray,
   {
-    path: "*",
-    element: <Navigate to="error/404" />,
-  },
-];
+		path: "*",
+		element: <Navigate to="error/404" />
+	}
+]
 
 const Router = () => {
-  const routes = useRoutes(rootRoutes);
-  return routes;
+	const routes = useRoutes(rootRoutes);
+	return routes;
 };
 
 export default Router;

@@ -1,14 +1,27 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
-import UnoCSS from "unocss/vite";
+import UnoCSS from 'unocss/vite';
 import svgr from "vite-plugin-svgr";
+import {
+  name,
+  version,
+  engines,
+  dependencies,
+  devDependencies,
+} from "./package.json";
+
+/** 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示 */
+const buildTimestamp = new Date().getTime();
+const __APP_INFO__ = {
+  pkg: { name, version, engines, dependencies, devDependencies },
+  buildTimestamp: buildTimestamp,
+};
 
 const pathSrc = resolve(__dirname, "src");
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/shark-canvas/',
   plugins: [
     UnoCSS(),
     svgr({
@@ -29,7 +42,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: "0.0.0.0",
+    host: '0.0.0.0',
   },
   css: {
     preprocessorOptions: {
@@ -41,7 +54,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "docs",
     chunkSizeWarningLimit: 500,
     minify: "terser", // Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效
     terserOptions: {
@@ -61,7 +73,6 @@ export default defineConfig({
         // 用于命名代码拆分时创建的共享块的输出命名
         chunkFileNames: "js/[name].[hash].js",
         // 用于输出静态资源的命名，[ext]表示文件扩展名
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         assetFileNames: (assetInfo: any) => {
           const info = assetInfo.name.split(".");
           let extType = info[info.length - 1];
@@ -78,5 +89,8 @@ export default defineConfig({
         },
       },
     },
+  },
+  define: {
+    __APP_INFO__: JSON.stringify(__APP_INFO__),
   },
 });

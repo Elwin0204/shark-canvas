@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
 
 const Page403: React.FC = () => {
-  return <div>403</div>;
-};
+  return (
+    <div>403</div>
+  )
+}
 
-export default Page403;
+export default Page403

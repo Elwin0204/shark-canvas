@@ -1,7 +1,9 @@
-import React from "react";
+import React from "react"
 
 const Page500: React.FC = () => {
-  return <div>500</div>;
-};
+  return (
+    <div>500</div>
+  )
+}
 
-export default Page500;
+export default Page500

@@ -18,6 +18,6 @@ const Login: React.FC = () => {
       </Modal>
     </>
   );
-};
+}
 
 export default Login;

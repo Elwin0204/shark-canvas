@@ -5,20 +5,20 @@ import React from "react";
 
 const designRoutes: Array<ExtendedRouteObject> = [
   {
-    path: "",
+    path: '',
     element: <BaseLayout />,
     children: [
       {
-        path: "design",
-        element: lazyLoad(React.lazy(() => import("@/pages/design"))),
+        path: 'design',
+        element: lazyLoad(React.lazy(() => import('@/pages/design'))),
         meta: {
           auth: false,
-          title: "设计",
-          i18nKey: "design",
-        },
-      },
-    ],
-  },
+          title: '设计',
+          i18nKey: 'design'
+        }
+      }
+    ]
+  }
 ];
 
 export default designRoutes;
